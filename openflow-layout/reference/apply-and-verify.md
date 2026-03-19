@@ -40,6 +40,33 @@ for comp_id, (x, y) in positions.items():
         layout.move_component(comp, (snap(x), snap(y)))
 ```
 
+## Logic Validation Hooks
+
+Wrap all move operations in `LayoutValidator` to assert that **only coordinates changed** — nothing else in the flow was modified:
+
+```python
+from scripts.layout_validator import LayoutValidator
+
+with LayoutValidator(pg_id) as v:
+    for comp_id, (x, y) in positions.items():
+        comp = comp_map.get(comp_id)
+        if comp:
+            layout.move_component(comp, (snap(x), snap(y)))
+# Raises AssertionError with a diff if any non-position field changed.
+```
+
+When also setting self-loop bendpoints (intentional), pass `strip_bends=True` to exclude `bends` from the comparison:
+
+```python
+with LayoutValidator(pg_id, strip_bends=True):
+    for comp_id, (x, y) in positions.items():
+        layout.move_component(comp_map[comp_id], (snap(x), snap(y)))
+    conn.component.bends = [{'x': bx, 'y': by} for bx, by in bendpoints]
+    nipyapi.nifi.ConnectionsApi().update_connection(conn.id, conn)
+```
+
+The validator re-fetches the flow on exit and strips all `position` fields before comparing — any processor config, relationship, or connection change will surface as a diff.
+
 ## Refresh After Moves
 
 After moving components, the original objects have stale coordinates. If you need to do relative positioning after the batch move, re-fetch:

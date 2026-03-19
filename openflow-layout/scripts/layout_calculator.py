@@ -61,6 +61,7 @@ DIMS = {
     'funnel': (FUNNEL_SIZE, FUNNEL_SIZE),
     'label': (200, LABEL_HEIGHT),
     'port': (240, 80),
+    'rpg': (PG_WIDTH, PG_HEIGHT),
 }
 
 SAME_ROW_RELATIONSHIPS = frozenset({

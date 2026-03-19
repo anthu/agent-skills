@@ -84,6 +84,7 @@ Read `reference/apply-and-verify.md` — move components using `nipyapi.layout.m
 | Process Group | 384 | 176 |
 | Funnel | 48 | 48 |
 | Port | 240 | 80 |
+| Remote Process Group | 384 | 176 |
 | Queue Box | 224 | 56 |
 
 **Spatial metaphor:** right = success, left = error/retry, down = forward flow.
