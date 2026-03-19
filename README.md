@@ -1,13 +1,14 @@
 # Skills Repository
 
-Personal Cortex Code skills, synced to Snowflake.
+A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code-skills) primarily focused on Snowflake workflows, designed for use with [Cortex Code](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code) but equally compatible with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and similar AI coding assistants.
 
 ## Available Skills
 
 | Skill | Description |
 |-------|-------------|
-| [dcm](dcm_projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
-| [skills-sync](skills-sync/SKILL.md) | Syncs local skills to Snowflake stage for team sharing. |
+| [dcm](dcm-projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
+| [openflow-layout](openflow-layout/SKILL.md) | Autonomously lays out NiFi/Openflow flows on the canvas using a Row-Grid algorithm. Organizes, tidies, and arranges processors and connections for clean visual flows. |
+| [skills-sync](skills-sync/SKILL.md) | Publishes skills to a Snowflake instance so they can be [shared across your team](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code-skills#sharing-skills). |
 
 ### DCM Sub-Skills
 
@@ -16,14 +17,14 @@ The `dcm` skill includes specialized sub-skills for different workflows:
 - **create-project** — Create new DCM projects from scratch
 - **modify-project** — Modify existing projects (with or without local source)
 - **deploy-project** — Safe deployment with confirmation workflow
-- **dcm-roles-and-grants** — Best practices for roles and grants
+- **dcm-roles-and-grants** — Best practices for roles and grants in DCM
 - **multi-project** — Hierarchical multi-project architectures
 - **bulk-import** — Bulk schema discovery and import
 
 ## Prerequisites
 
-- Cortex Code CLI
-- Active Snowflake connection
+- [Cortex Code](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), or a compatible AI coding assistant
+- Active Snowflake connection (for Snowflake-specific skills)
 
 ## Local Setup
 
@@ -31,15 +32,9 @@ The `dcm` skill includes specialized sub-skills for different workflows:
 cortex skill add <path-to-this-repo>
 ```
 
-## Sync to Snowflake
-
-```bash
-$skills-sync
-```
-
 ## Team Access
 
-After syncing, teammates can add skills from Snowflake:
+Use the `skills-sync` skill to publish to Snowflake, then teammates can add them:
 
 ```bash
 cortex skill add @CORTEX.SKILLS.SKILLS_STAGE/
