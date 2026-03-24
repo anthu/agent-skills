@@ -185,13 +185,7 @@ def dashboard_metrics():
 
 ### Mistake 4: Using `pages/` as directory name
 
-```
-pages/               ← BAD: triggers legacy auto-discovery, conflicts with st.navigation()
-    dashboard.py
-    utils.py
-```
-
-NEVER name your page directory `pages/`. Streamlit's legacy auto-discovery system scans this directory for `.py` files and registers them as pages. This conflicts with `st.navigation()` and causes the entrypoint to crash on rerun — especially on Streamlit in Snowflake (SiS). Use `views/` instead.
+Use `views/` instead — `pages/` conflicts with Streamlit's legacy auto-discovery. See SKILL.md Rule 3 for details.
 
 ## Sidebar Composition
 
