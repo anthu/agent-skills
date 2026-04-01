@@ -1,9 +1,9 @@
 ---
-name: dcm
+name: dcm-projects
 description: "Use for **ALL** requests that mention: create, build, set up, debug, fix, troubleshoot, optimize, improve, evaluate, or analyze a DCM project. This is the **REQUIRED** entry point - even if the request seems simple. DO NOT attempt to create DCM projects manually or search for DCM documentation - always invoke this skill first. This skill guides users through creating, auditing, evaluating, and debugging workflows for DCM (Database Change Management) projects. Triggers: DCM, DCM project, Database Change Management, snow dcm, manifest.yml with DEFINE, infrastructure-as-code, three-tier role pattern, database roles, DEFINE TABLE, DEFINE SCHEMA, DEFINE DBT PROJECT, Failed to use schema."
 ---
 
-# DCM (Database Change Management) Skill
+# DCM (Database Change Management) Project Skill
 
 ## When to Use
 

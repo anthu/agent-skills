@@ -6,14 +6,14 @@ A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/co
 
 | Skill | Description |
 |-------|-------------|
-| [dcm](dcm-projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
+| [dcm-projects](dcm-projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
 | [openflow-layout](openflow-layout/SKILL.md) | Autonomously lays out NiFi/Openflow flows on the canvas using a Row-Grid algorithm. Organizes, tidies, and arranges processors and connections for clean visual flows. |
 | [skills-sync](skills-sync/SKILL.md) | Publishes skills to a Snowflake instance so they can be [shared across your team](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code-skills#sharing-skills). |
 | [streamlit-multipage-nav](streamlit-multipage-nav/SKILL.md) | Builds reliable multi-page Streamlit apps using st.navigation and st.Page. Covers directory structure, shared components, session state, and the critical pages/ vs views/ directory conflict. |
 
 ### DCM Sub-Skills
 
-The `dcm` skill includes specialized sub-skills for different workflows:
+The `dcm-projects` skill includes specialized sub-skills for different workflows:
 
 - **create-project** — Create new DCM projects from scratch
 - **modify-project** — Modify existing projects (with or without local source)
@@ -80,14 +80,14 @@ Or inside a session:
 /skill list
 ```
 
-You should see `dcm`, `openflow-layout`, `skills-sync`, and `streamlit-multipage-nav` in the output.
+You should see `dcm-projects`, `openflow-layout`, `skills-sync`, and `streamlit-multipage-nav` in the output.
 
 ### Using a skill
 
 Invoke a skill by name with the `$` prefix:
 
 ```
-$dcm Create a new project for my analytics database
+$dcm-projects Create a new project for my analytics database
 $openflow-layout Organize the processors in my flow
 ```
 
