@@ -1,0 +1,11 @@
+[project]
+name = "event-sync"
+version = "0.1.0"
+description = "Sync marketing events from Google Sheets to Apple/Google Calendar via Cortex Code Agent SDK"
+requires-python = ">=3.12"
+dependencies = [
+    "cortex-code-agent-sdk",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = []

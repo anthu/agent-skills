@@ -7,9 +7,11 @@ A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/co
 | Skill | Description |
 |-------|-------------|
 | [dcm-projects](dcm-projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
+| [event-sync](event-sync/SKILL.md) | Sync marketing events from a Google Sheet to an Apple/Google Calendar. Reads a sheet tab, filters by region, web-searches event details, and creates calendar entries with HTML-formatted descriptions. |
 | [openflow-layout](openflow-layout/SKILL.md) | Autonomously lays out NiFi/Openflow flows on the canvas using a Row-Grid algorithm. Organizes, tidies, and arranges processors and connections for clean visual flows. |
 | [skills-sync](skills-sync/SKILL.md) | Publishes skills to a Snowflake instance so they can be [shared across your team](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code-skills#sharing-skills). |
 | [streamlit-multipage-nav](streamlit-multipage-nav/SKILL.md) | Builds reliable multi-page Streamlit apps using st.navigation and st.Page. Covers directory structure, shared components, session state, and the critical pages/ vs views/ directory conflict. |
+| [skill-development](skill-development/SKILL.md) | Create, test, and audit skills for Cortex Code. Includes best practices reference, eval-driven iteration workflow, and sub-skills for creating from scratch, summarizing sessions, and auditing existing skills. |
 
 ### DCM Sub-Skills
 
@@ -80,7 +82,7 @@ Or inside a session:
 /skill list
 ```
 
-You should see `dcm-projects`, `openflow-layout`, `skills-sync`, and `streamlit-multipage-nav` in the output.
+You should see `dcm-projects`, `event-sync`, `openflow-layout`, `skills-sync`, and `streamlit-multipage-nav` in the output.
 
 ### Using a skill
 
