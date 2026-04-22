@@ -12,6 +12,7 @@ A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/co
 | [skills-sync](skills-sync/SKILL.md) | Publishes skills to a Snowflake instance so they can be [shared across your team](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code-skills#sharing-skills). |
 | [streamlit-multipage-nav](streamlit-multipage-nav/SKILL.md) | Builds reliable multi-page Streamlit apps using st.navigation and st.Page. Covers directory structure, shared components, session state, and the critical pages/ vs views/ directory conflict. |
 | [skill-development](skill-development/SKILL.md) | Create, test, and audit skills for Cortex Code. Includes best practices reference, eval-driven iteration workflow, and sub-skills for creating from scratch, summarizing sessions, and auditing existing skills. |
+| [sync-projects](sync-projects/SKILL.md) | Generate Obsidian project documentation from AI conversation history. Scans Cortex Code and Claude Code conversations, groups by project, and generates rich Obsidian notes with summaries and timelines. |
 
 ### DCM Sub-Skills
 
@@ -82,7 +83,7 @@ Or inside a session:
 /skill list
 ```
 
-You should see `dcm-projects`, `event-sync`, `openflow-layout`, `skills-sync`, and `streamlit-multipage-nav` in the output.
+You should see `dcm-projects`, `event-sync`, `openflow-layout`, `skills-sync`, `streamlit-multipage-nav`, `skill-development`, and `sync-projects` in the output.
 
 ### Using a skill
 
