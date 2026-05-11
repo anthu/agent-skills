@@ -6,6 +6,7 @@ A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/co
 
 | Skill | Description |
 |-------|-------------|
+| [create-tutor](create-tutor/SKILL.md) | Generates an AI tutor for any Cortex Code workshop. Agentically explores existing notebooks, SQL scripts, and solutions to produce a tutor skill with graduated hints, error triage, and solution validation. |
 | [dcm-projects](dcm-projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
 | [event-sync](event-sync/SKILL.md) | Sync marketing events from a Google Sheet to an Apple/Google Calendar. Reads a sheet tab, filters by region, web-searches event details, and creates calendar entries with HTML-formatted descriptions. |
 | [openflow-layout](openflow-layout/SKILL.md) | Autonomously lays out NiFi/Openflow flows on the canvas using a Row-Grid algorithm. Organizes, tidies, and arranges processors and connections for clean visual flows. |
@@ -14,6 +15,14 @@ A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/co
 | [skill-development](skill-development/SKILL.md) | Create, test, and audit skills for Cortex Code. Includes best practices reference, eval-driven iteration workflow, and sub-skills for creating from scratch, summarizing sessions, and auditing existing skills. |
 | [daily-note](daily-note/SKILL.md) | Create or update today's Obsidian daily note with meeting blocks from iCal. Fetches calendar events and generates a structured daily note with meeting sections. |
 | [sync-projects](sync-projects/SKILL.md) | Generate Obsidian project documentation from AI conversation history. Scans Cortex Code and Claude Code conversations, groups by project, and generates rich Obsidian notes with summaries and timelines. |
+
+### Create-Tutor Sub-Skills
+
+The `create-tutor` skill includes specialized sub-skills:
+
+- **analyze** — Agentically explores a workshop repo to discover exercises, solutions, and structure
+- **generate** — Generates tutor SKILL.md, AGENTS.md, workshop.yaml, and graduated hints from analysis
+- **evolve** — Updates tutor infrastructure after workshop content changes or author feedback
 
 ### DCM Sub-Skills
 
@@ -84,7 +93,7 @@ Or inside a session:
 /skill list
 ```
 
-You should see `daily-note`, `dcm-projects`, `event-sync`, `openflow-layout`, `skills-sync`, `streamlit-multipage-nav`, `skill-development`, and `sync-projects` in the output.
+You should see `create-tutor`, `daily-note`, `dcm-projects`, `event-sync`, `openflow-layout`, `skills-sync`, `streamlit-multipage-nav`, `skill-development`, and `sync-projects` in the output.
 
 ### Using a skill
 
