@@ -1,0 +1,59 @@
+{
+  "skill_name": "create-tutor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a multi-notebook Snowflake workshop with exercises marked by YOUR CODE HERE and a solutions folder. Create a tutor for it.",
+      "expected_output": "Discovers all exercises across notebooks, matches solutions by cell name, generates tutor SKILL.md with L1/L2/L3 hints, AGENTS.md with routing, workshop.yaml manifest",
+      "files": [],
+      "expectations": [
+        "Discovers all 6 exercises across both notebooks (p1_ex1_json through p2_ex6_summarize)",
+        "Matches all 6 exercises to their corresponding solution cells by cell name",
+        "Generates a workshop.yaml manifest file in the workshop root",
+        "Generates a tutor SKILL.md at .snowflake/cortex/skills/tutor/SKILL.md",
+        "Generates an AGENTS.md in the workshop root",
+        "Each exercise has L1 (concept), L2 (structure), and L3 (solution) hints",
+        "L1 hints contain no code -- only conceptual explanation",
+        "L2 hints show code skeletons with placeholders, not complete solutions",
+        "Detects QUERY_TAG progress tracking and includes instructions to preserve it",
+        "Detects AI functions used: AI_PARSE_DOCUMENT, AI_EXTRACT, AI_CLASSIFY, AI_FILTER, AI_COMPLETE",
+        "Presents a structured analysis report before generating files (STOP point)",
+        "The generated tutor SKILL.md includes exercise triage logic (exercise vs non-exercise cells)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I have a single notebook called workshop.ipynb with 4 SQL exercises. No solutions folder. Create a tutor.",
+      "expected_output": "Discovers 4 exercises from YOUR CODE HERE markers, warns about missing solutions, generates tutor with L1/L2 hints from instructions, L3 notes missing solutions",
+      "files": [],
+      "expectations": [
+        "Discovers all 4 exercises (ex1_running_total, ex2_rank, ex3_cte, ex4_moving_avg)",
+        "Warns that no solution files were found",
+        "Generates L1 and L2 hints for all exercises from instructions alone",
+        "L3 hints note that solutions are not available or are best-effort",
+        "Generates a workshop.yaml with all 4 exercises",
+        "Generates a tutor SKILL.md",
+        "Generates an AGENTS.md",
+        "Does not report QUERY_TAG since none exists in the single notebook",
+        "Presents analysis report before generating (STOP point)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I added a new exercise to notebook 3 (hol_03_agent.ipynb) of my workshop. Update the tutor.",
+      "expected_output": "EVOLVE mode: re-explores repo, loads existing workshop.yaml, shows diff with new exercise, regenerates affected tutor sections on approval",
+      "files": [],
+      "expectations": [
+        "Detects EVOLVE mode (workshop.yaml exists)",
+        "Re-explores the repo and finds the new hol_03_agent.ipynb",
+        "Identifies Exercise 7 (p3_ex7_agent) as a NEW exercise not in the manifest",
+        "Presents a diff showing Exercise 7 as added while Exercises 1-6 are unchanged",
+        "Generates hints for Exercise 7",
+        "Preserves existing hints for Exercises 1-6 (does not regenerate them)",
+        "Updates workshop.yaml with the new module/exercise",
+        "Updates tutor SKILL.md with Exercise 7",
+        "Presents changes for review before applying (STOP point)"
+      ]
+    }
+  ]
+}
