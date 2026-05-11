@@ -1,0 +1,137 @@
+{
+  "skill_name": "daily-note",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "prep my day",
+      "expected_output": "Daily note with frontmatter and meeting blocks from iCal",
+      "files": [],
+      "assertions": [
+        {
+          "text": "has-frontmatter: Note starts with YAML frontmatter containing title, tags, created, updated, type fields",
+          "type": "structural"
+        },
+        {
+          "text": "has-meeting-section: Note contains a '# Meeting Notes' heading",
+          "type": "structural"
+        },
+        {
+          "text": "meetings-are-h2: Individual meetings use '## HH:MM |' format headings (not ### or other levels)",
+          "type": "structural"
+        },
+        {
+          "text": "chronological-order: Meeting start times are in ascending order (e.g. 09:00 before 14:00)",
+          "type": "structural"
+        },
+        {
+          "text": "has-notes-subsection: Each meeting block has a '### Notes' sub-heading",
+          "type": "structural"
+        },
+        {
+          "text": "has-action-items: Each meeting block has a '### Action Items' sub-heading with '- [ ]' placeholder",
+          "type": "structural"
+        },
+        {
+          "text": "no-allday-events: No all-day events (holidays, OOO, etc.) appear as meeting blocks",
+          "type": "filtering"
+        },
+        {
+          "text": "24h-time-format: Times use 24-hour format (e.g. 14:00 not 2:00 PM)",
+          "type": "formatting"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "update today's daily note \u2014 I already started taking notes in some meetings",
+      "expected_output": "Updated note preserving existing content, new meetings inserted chronologically",
+      "files": [],
+      "assertions": [
+        {
+          "text": "has-frontmatter: Note starts with YAML frontmatter containing title, tags, created, updated, type fields",
+          "type": "structural"
+        },
+        {
+          "text": "has-meeting-section: Note contains a '# Meeting Notes' heading",
+          "type": "structural"
+        },
+        {
+          "text": "meetings-are-h2: Individual meetings use '## HH:MM |' format headings (not ### or other levels)",
+          "type": "structural"
+        },
+        {
+          "text": "chronological-order: Meeting start times are in ascending order (e.g. 09:00 before 14:00)",
+          "type": "structural"
+        },
+        {
+          "text": "has-notes-subsection: Each meeting block has a '### Notes' sub-heading",
+          "type": "structural"
+        },
+        {
+          "text": "has-action-items: Each meeting block has a '### Action Items' sub-heading with '- [ ]' placeholder",
+          "type": "structural"
+        },
+        {
+          "text": "no-allday-events: No all-day events (holidays, OOO, etc.) appear as meeting blocks",
+          "type": "filtering"
+        },
+        {
+          "text": "24h-time-format: Times use 24-hour format (e.g. 14:00 not 2:00 PM)",
+          "type": "formatting"
+        },
+        {
+          "text": "existing-content-preserved: The pre-existing notes under '09:00 | Weekly Team Standup' (Q2 pipeline targets, Accenture follow-up, action item) are intact",
+          "type": "update-logic"
+        },
+        {
+          "text": "no-duplicate-meetings: The 09:00 Weekly Team Standup is not duplicated \u2014 appears exactly once",
+          "type": "update-logic"
+        },
+        {
+          "text": "new-meetings-inserted-chronologically: New meetings from calendar are placed in correct time position relative to existing ones",
+          "type": "update-logic"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "set up my meeting notes for today, I think my calendar is pretty empty",
+      "expected_output": "Daily note with whatever meetings exist (possibly none)",
+      "files": [],
+      "assertions": [
+        {
+          "text": "has-frontmatter: Note starts with YAML frontmatter containing title, tags, created, updated, type fields",
+          "type": "structural"
+        },
+        {
+          "text": "has-meeting-section: Note contains a '# Meeting Notes' heading",
+          "type": "structural"
+        },
+        {
+          "text": "meetings-are-h2: Individual meetings use '## HH:MM |' format headings (not ### or other levels)",
+          "type": "structural"
+        },
+        {
+          "text": "chronological-order: Meeting start times are in ascending order (e.g. 09:00 before 14:00)",
+          "type": "structural"
+        },
+        {
+          "text": "has-notes-subsection: Each meeting block has a '### Notes' sub-heading",
+          "type": "structural"
+        },
+        {
+          "text": "has-action-items: Each meeting block has a '### Action Items' sub-heading with '- [ ]' placeholder",
+          "type": "structural"
+        },
+        {
+          "text": "no-allday-events: No all-day events (holidays, OOO, etc.) appear as meeting blocks",
+          "type": "filtering"
+        },
+        {
+          "text": "24h-time-format: Times use 24-hour format (e.g. 14:00 not 2:00 PM)",
+          "type": "formatting"
+        }
+      ]
+    }
+  ]
+}
