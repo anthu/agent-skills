@@ -1,10 +1,10 @@
 ---
 name: create-tutor
 description: >
-  Generates an AI tutor for any Cortex Code workshop. Agentically explores
-  existing notebooks, SQL scripts, and solutions to produce a tutor skill
-  with graduated hints (concept -> structure -> solution), error triage,
-  and solution validation. Works with any folder structure — no conventions
+  Meta-skill that generates an AI tutor for any Cortex Code workshop.
+  Agentically explores existing notebooks, SQL scripts, and solutions to
+  produce a tutor skill with graduated hints (concept -> structure ->
+  solution), error triage, and solution validation. Works with any folder structure — no conventions
   assumed. Use when: create tutor, generate tutor, workshop tutor, analyze
   workshop, evolve tutor, update tutor, add tutor to my workshop, make my
   workshop AI-tutored, tutored workshop, workshop skill, tutor skill,

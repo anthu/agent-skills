@@ -1,6 +1,6 @@
 # create-tutor
 
-Generate an AI tutor for any [Cortex Code](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code) workshop — graduated hints, error triage, solution validation, and progress tracking — from your existing workshop content.
+Meta-skill that generates an AI tutor for any [Cortex Code](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code) workshop — graduated hints, error triage, solution validation, and progress tracking — from your existing workshop content. This skill creates tutor infrastructure; it does not tutor students directly.
 
 ## Quick Start
 

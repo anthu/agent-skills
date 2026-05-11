@@ -6,7 +6,7 @@ A collection of [skills](https://docs.snowflake.com/en/user-guide/cortex-code/co
 
 | Skill | Description |
 |-------|-------------|
-| [create-tutor](create-tutor/SKILL.md) | Generates an AI tutor for any Cortex Code workshop. Agentically explores existing notebooks, SQL scripts, and solutions to produce a tutor skill with graduated hints, error triage, and solution validation. |
+| [create-tutor](create-tutor/SKILL.md) | Meta-skill that generates an AI tutor for any Cortex Code workshop. Agentically explores existing notebooks, SQL scripts, and solutions to produce a tutor skill with graduated hints, error triage, and solution validation. |
 | [dcm-projects](dcm-projects/SKILL.md) | Database Change Management (DCM) for Snowflake infrastructure-as-code. Creates, modifies, and deploys DCM projects with full workflow support. |
 | [event-sync](event-sync/SKILL.md) | Sync marketing events from a Google Sheet to an Apple/Google Calendar. Reads a sheet tab, filters by region, web-searches event details, and creates calendar entries with HTML-formatted descriptions. |
 | [openflow-layout](openflow-layout/SKILL.md) | Autonomously lays out NiFi/Openflow flows on the canvas using a Row-Grid algorithm. Organizes, tidies, and arranges processors and connections for clean visual flows. |
